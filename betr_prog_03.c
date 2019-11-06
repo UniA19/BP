@@ -60,7 +60,7 @@ void print_alarm(int size)
 {
     int i;
     if (size < 0) {
-        printf("Illeagal argument exception in function print_alarm(int size)\n");
+        printf("Illegal argument exception in function print_alarm(int size)\n");
         printf("The function parameter size = %i, which is < 0\n", size);
         return;
     }
@@ -176,6 +176,6 @@ int main(void)
     printf("%i\n", array_isneg(arr, 3));
     arr[0] = 0;
     printf("%i\n", array_isneg(arr, 3));
-    
+
     return 0;
 }
