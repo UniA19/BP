@@ -132,7 +132,7 @@ void array_randneg(int a[], int size)
 {
     int i;
     for (i = 0; i < size; ++i) {
-        a[i] = -rand();
+        a[i] = -rand() - 1;
     }
 }
 
