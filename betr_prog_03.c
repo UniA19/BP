@@ -176,6 +176,6 @@ int main(void)
     printf("%i\n", array_isneg(arr, 3));
     arr[0] = 0;
     printf("%i\n", array_isneg(arr, 3));
-    
+ 
     return 0;
 }
