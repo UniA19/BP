@@ -4,6 +4,8 @@
 #include <time.h>
 
 #define N 10
+#define MY_RAND_MIN 100000
+#define MY_RAND_MAX 999999
 
 unsigned int my_interval_rand(unsigned int u, unsigned int o);
 void array_init(unsigned int w[], unsigned int n, unsigned int u, unsigned int o);
@@ -17,8 +19,9 @@ int main()
 
     srand(time(NULL));
 
-    array_init(array, N, 100000, 999999);
+    array_init(array, N, MY_RAND_MAX, MY_RAND_MIN);
 
+    printf("%i\n", RAND_MAX);
     for (i = 0; i < N; ++i) {
         printf("%u\n", array[i]);
     }
