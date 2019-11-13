@@ -20,10 +20,10 @@ int main()
     array_init(array, N, 100000, 999999);
 
     for (i = 0; i < N; ++i) {
-        printf("%i\n", array[i]);
+        printf("%u\n", array[i]);
     }
 
-    printf("second min: %i\n", array_second_min(array, N));
+    printf("second min: %u\n", array_second_min(array, N));
 
     return 0;
 }
