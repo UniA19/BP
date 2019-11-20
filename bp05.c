@@ -18,12 +18,14 @@ int main(void)
                 printf("Eine Eingabe:\n");
                 status = read_string(string);
                 if (status == 0){
-                        printf("Ungültige Eingabe. Neue Eingabe:\n");
+                        printf("Ungueltige Eingabe. Neue Eingabe:\n");
                         continue;
                 }
                 if(!(strcmp(string, "ende"))) {
                         break;
-                }  else {
+                } else if(!(strcmp(string, "quit"))) {
+                        continue;
+                } else {
                         printf("Anzahl an \'?\' im String: %i\n", count_string(string, '?'));
                         printf("Anzahl an \'!\' im String: %i\n", count_string(string, '!'));
                 }
