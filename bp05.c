@@ -13,7 +13,7 @@ int main(void)
 {
         int status;
         char string[MAX_STRING + 1];
-        printf("Dieses Programm zählt die Anzahl der \'!\' und \'?\'.\n");
+        printf("Dieses Programm zaehlt die Anzahl der \'!\' und \'?\'.\n");
         while(TRUE) {
                 printf("Eine Eingabe:\n");
                 status = read_string(string);
