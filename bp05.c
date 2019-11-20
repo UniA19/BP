@@ -13,12 +13,12 @@ int main(void)
 {
         int status;
         char string[MAX_STRING + 1];
-        printf("Dieses Programm zaehlt die Anzahl der \'!\' und \'?\'.\n");
+        printf("Dieses Programm zählt die Anzahl der \'!\' und \'?\'.\n");
         while(TRUE) {
                 printf("Eine Eingabe:\n");
                 status = read_string(string);
                 if (status == 0){
-                        printf("Ungueltige Eingabe. Neue Eingabe:\n");
+                        printf("Ungültige Eingabe. Neue Eingabe:\n");
                         continue;
                 }
                 if(!(strcmp(string, "ende"))) {
@@ -57,10 +57,9 @@ int count_string(char w[], char c)
         int i, char_count;
         i = 0;
         char_count = 0;
-        while (w[i] != '\0')
-        {
+        while (w[i] != '\0') {
                 if(w[i] == c) {
-                        char_count += 1;
+                        ++char_count;
                 }
                 ++i;
         }
