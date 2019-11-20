@@ -40,7 +40,6 @@ int read_string(char input[])
                 input[i++] = c;
                 c = getchar();
         }
-        printf("%i\n", i);
         if(i < MIN_STRING) {
                 return 0;
         } else if(i == MAX_STRING && c != '\n') {
