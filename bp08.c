@@ -38,6 +38,7 @@ char **tokenize(char *str, char delim, unsigned int *num)
         *num = 0;
 
         if (!*str) {
+                *num = -1;
                 return NULL;
         }
 
