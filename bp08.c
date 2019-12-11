@@ -35,16 +35,23 @@ int main(int argc, char **argv)
 char **tokenize(char *str, char delim, unsigned int *num)
 {
         char **tokens = NULL;
+        char **pointer;
         *num = 0;
 
-        if (!*str) {
+        if (!str || !*str) {
                 *num = -1;
                 return NULL;
         }
 
         if(*str != delim) {
                 ++(*num);
+                pointer = tokens;
                 tokens = (char **)realloc(tokens, (*num) * sizeof(char *));
+                if (!tokens) {
+                        *num = -1;
+                        free(pointer);
+                        return NULL;
+                }
                 tokens[0] = str;
                 ++str;
         }
@@ -54,7 +61,13 @@ char **tokenize(char *str, char delim, unsigned int *num)
                         *str = '\0';
                         if(*(str + 1) != delim && *(str + 1) != '\0') {
                                 ++(*num);
+                                pointer = tokens;
                                 tokens = (char **)realloc(tokens, (*num) * sizeof(char *));
+                                if (!tokens) {
+                                        *num = -1;
+                                        free(pointer);
+                                        return NULL;
+                                }
                                 tokens[*(num) - 1] = (str + 1);
                         }
                 }
