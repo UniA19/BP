@@ -37,8 +37,15 @@ char **tokenize(char *str, char delim, unsigned int *num)
         char **tokens = NULL;
         *num = 0;
 
-        if (strlen(str) == 0) {
+        if (!*str) {
                 return NULL;
+        }
+
+        if(*str != delim) {
+                ++(*num);
+                tokens = (char **)realloc(tokens, (*num) * sizeof(char *));
+                tokens[0] = str;
+                ++str;
         }
 
         while (*str) {
