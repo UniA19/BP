@@ -52,7 +52,7 @@ char **tokenize(char *str, char delim, unsigned int *num)
         while (*str) {
                 if (*str == delim) {
                         *str = '\0';
-                        if(!(*(str + 1) == delim) && !(*(str + 1) == '\0')) {
+                        if(*(str + 1) != delim && *(str + 1) != '\0') {
                                 ++(*num);
                                 tokens = (char **)realloc(tokens, (*num) * sizeof(char *));
                                 tokens[*(num) - 1] = (str + 1);
